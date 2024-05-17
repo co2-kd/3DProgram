@@ -1,6 +1,4 @@
 ﻿#include "main.h"
-#include"HamuHamu.h"
-#include"Terrain.h"
 
 // ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// /////
 // エントリーポイント
@@ -66,36 +64,6 @@ void Application::PreUpdate()
 // ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// /////
 void Application::Update()
 {
-	//カメラ行列の更新
-	{
-		static float _yAng;
-		//_yAng += 0.5f;
-		//while (_yAng >= 360.0f)
-		//{
-		//	_yAng -= 360.0f;
-		//}
-
-		//大きさ
-		Math::Matrix _mScale = Math::Matrix::CreateScale(1);
-
-		//どれだけ傾けているか
-		Math::Matrix _mRotationX = Math::Matrix::CreateRotationX(DirectX::XMConvertToRadians(45));
-		Math::Matrix _mRotationY = Math::Matrix::CreateRotationY(DirectX::XMConvertToRadians(_yAng));
-
-		//基準点(ターゲットからどれだけ離れているか)
-		Math::Matrix _mTransPos = Math::Matrix::CreateTranslation(0, 6, -5);
-
-		//カメラのワールド行列を作成、適応させる(行列の親子関係)	
-		Math::Matrix _mWorld = (_mScale * _mRotationX * _mTransPos * _mRotationY);
-		m_spCamera->SetCameraMatrix(_mWorld);
-	}
-
-	//全ゲームオブジェクトの更新
-	for (std::shared_ptr<KdGameObject> gameObj : m_GameObjList)
-	{
-		gameObj->Update();
-	}
-
 }
 
 // ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// ///// /////
@@ -152,11 +120,6 @@ void Application::Draw()
 	// 陰影のあるオブジェクト(不透明な物体や2Dキャラ)はBeginとEndの間にまとめてDrawする
 	KdShaderManager::Instance().m_StandardShader.BeginLit();
 	{
-		//全ゲームオブジェクトの描画
-		for (std::shared_ptr<KdGameObject> gameObj : m_GameObjList)
-		{
-			gameObj->DrawLit();
-		}
 	}
 	KdShaderManager::Instance().m_StandardShader.EndLit();
 
@@ -216,9 +179,9 @@ bool Application::Init(int w, int h)
 	// フルスクリーン確認
 	//===================================================================
 	bool bFullScreen = false;
-	//if (MessageBoxA(m_window.GetWndHandle(), "フルスクリーンにしますか？", "確認", MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2) == IDYES) {
-	//	bFullScreen = true;
-	//}
+	if (MessageBoxA(m_window.GetWndHandle(), "フルスクリーンにしますか？", "確認", MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2) == IDYES) {
+		bFullScreen = true;
+	}
 
 	//===================================================================
 	// Direct3D初期化
@@ -262,25 +225,7 @@ bool Application::Init(int w, int h)
 	//===================================================================
 	// カメラ初期化
 	//===================================================================
-	m_spCamera = std::make_shared<KdCamera>();
-
-	//===================================================================
-	// ハム太郎初期化
-	//===================================================================
-	std::shared_ptr<HamuHamu> _Hamu = std::make_shared<HamuHamu>();
-	_Hamu->Init();
-	//★重要
-	m_GameObjList.push_back(_Hamu);
-
-
-	//===================================================================
-	// 地形初期化
-	//===================================================================
-	std::shared_ptr<Terrain> _Terrain = std::make_shared<Terrain>();
-	_Terrain->Init();
-	//★重要
-	m_GameObjList.push_back(_Terrain);
-
+	m_spCamera	= std::make_shared<KdCamera>();
 
 	return true;
 }

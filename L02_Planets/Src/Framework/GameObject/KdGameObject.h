@@ -1,5 +1,14 @@
 ﻿#pragma once
 
+
+//オブジェクトの種類
+enum class ObjectType
+{
+	Sun,
+	Moon,
+	Earth
+};
+
 // ゲーム上に存在するすべてのオブジェクトの基底となるクラス
 class KdGameObject : public std::enable_shared_from_this<KdGameObject>
 {
@@ -64,6 +73,9 @@ public:
 	bool Intersects(const KdCollider::BoxInfo& targetBox, std::list<KdCollider::CollisionResult>* pResults);
 	bool Intersects(const KdCollider::RayInfo& targetShape, std::list<KdCollider::CollisionResult>* pResults);
 
+
+	ObjectType GetObjType() { return m_objType; }
+
 protected:
 
 	void Release() {}
@@ -82,4 +94,7 @@ protected:
 
 	// 当たり判定クラス
 	std::unique_ptr<KdCollider> m_pCollider = nullptr;
+
+	ObjectType m_objType;
+
 };

@@ -4,6 +4,7 @@
 // アプリケーションクラス
 //	APP.～ でどこからでもアクセス可能
 //============================================================
+
 class Application
 {
 // メンバ
@@ -20,6 +21,9 @@ public:
 
 	int GetNowFPS() const { return m_fpsController.m_nowfps; }
 	int GetMaxFPS() const { return m_fpsController.m_maxFps; }
+
+	//オブジェクトリストを取得
+	std::vector<std::shared_ptr<KdGameObject>> GetObjList() { return m_GameObjList; }
 
 private:
 
@@ -52,6 +56,10 @@ private:
 	bool		m_endFlag = false;
 
 	std::shared_ptr<KdCamera>			m_spCamera		= nullptr;
+
+	//ゲームオブジェクトリスト
+	std::vector<std::shared_ptr<KdGameObject>> m_GameObjList;
+	Math::Vector3 m_pos;
 
 //=====================================================
 // シングルトンパターン

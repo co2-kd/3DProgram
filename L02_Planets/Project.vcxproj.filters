@@ -55,6 +55,18 @@
     <Filter Include="Src\Framework\Effekseer">
       <UniqueIdentifier>{c81b93e4-2f33-496a-985e-98658f1cec51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Object">
+      <UniqueIdentifier>{0c238938-6e42-44f4-86ef-54b2be7a0273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Object\Sun">
+      <UniqueIdentifier>{336b1f81-5231-4027-a013-1089af3979bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Object\Earth">
+      <UniqueIdentifier>{d08636c2-345e-49f7-9a9c-87524b7112d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Object\Moon">
+      <UniqueIdentifier>{84aae164-3730-4845-990a-e2cb7537a691}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -180,6 +192,15 @@
     <ClInclude Include="Src\Framework\Effekseer\KdEffekseerManager.h">
       <Filter>Src\Framework\Effekseer</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\Object\Earth\Earth.h">
+      <Filter>Src\Application\Object\Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Object\Moon\Moon.h">
+      <Filter>Src\Application\Object\Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Object\Sun\Sun.h">
+      <Filter>Src\Application\Object\Sun</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -283,6 +304,15 @@
     </ClCompile>
     <ClCompile Include="Src\Framework\Effekseer\KdEffekseerManager.cpp">
       <Filter>Src\Framework\Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Object\Earth\Earth.cpp">
+      <Filter>Src\Application\Object\Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Object\Moon\Moon.cpp">
+      <Filter>Src\Application\Object\Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Object\Sun\Sun.cpp">
+      <Filter>Src\Application\Object\Sun</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

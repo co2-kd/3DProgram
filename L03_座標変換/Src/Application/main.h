@@ -54,9 +54,6 @@ private:
 	std::shared_ptr<KdCamera>					m_spCamera	= nullptr;
 	std::vector<std::shared_ptr<KdGameObject>>	m_GameObjectList{};
 
-	//マウス
-	POINT m_mouse;	//マウス座標
-	void MousePos();
 
 //=====================================================
 // シングルトンパターン

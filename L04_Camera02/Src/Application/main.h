@@ -21,6 +21,8 @@ public:
 	int GetNowFPS() const { return m_fpsController.m_nowfps; }
 	int GetMaxFPS() const { return m_fpsController.m_maxFps; }
 
+
+
 private:
 
 	void KdBeginUpdate();

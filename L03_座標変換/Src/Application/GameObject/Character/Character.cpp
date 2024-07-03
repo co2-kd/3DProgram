@@ -92,6 +92,8 @@ void Character::DrawSprite()
 	{
 		Math::Vector3 pos = GetPos();
 		Math::Vector3 result = Math::Vector3::Zero;
+
+		//2D座標を3D座標に変換
 		_camera->ConvertWorldToScreenDetail(pos, result);
 
 		KdShaderManager::Instance().m_spriteShader.DrawCircle(result.x, result.y, 10, &kRedColor);
@@ -100,7 +102,5 @@ void Character::DrawSprite()
 		m_Rect = { 0,0,128,128 };
 		KdShaderManager::Instance().m_spriteShader.DrawTex(&m_Tex,result.x,result.y,&m_Rect,&m_Color);
 	}
-
-	//2D座標を3D座標を変換
 
 }

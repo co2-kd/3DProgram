@@ -398,17 +398,3 @@ void Application::Release()
 	// ウィンドウ削除
 	m_window.Release();
 }
-
-void Application::MousePos()
-{
-	GetCursorPos(&m_mouse);	//マウス座標の配置
-	ScreenToClient(Application::Instance().m_window.GetWndHandle(), &m_mouse);	//マウス座標をウィンドウ内に変更
-
-	//左↑が0になるため座標補正を開始
-	m_mouse.x -= 640;
-	m_mouse.y -= 320;
-	m_mouse.y *= -1;
-
-	//m_spCamera->GetCameraMatrix();
-	//m_spCamera->GenerateRayInfoFromClientPos(m_mouse,)
-}

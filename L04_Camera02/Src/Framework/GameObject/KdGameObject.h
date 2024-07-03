@@ -82,4 +82,6 @@ protected:
 
 	// 当たり判定クラス
 	std::unique_ptr<KdCollider> m_pCollider = nullptr;
+
+
 };

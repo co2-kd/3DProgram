@@ -88,6 +88,9 @@
     <Filter Include="Src\Application\GameObject\Terrain">
       <UniqueIdentifier>{708cd46d-37e0-4430-8a29-e02fe2512348}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\GameObject\Camera\CCTVCamera">
+      <UniqueIdentifier>{2b9c3ef0-02d4-4137-bae4-088a1516db57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -270,6 +273,9 @@
     <ClInclude Include="Src\Application\GameObject\Terrain\Terrain.h">
       <Filter>Src\Application\GameObject\Terrain</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\GameObject\Camera\CCTVCamera\CCVTCamera.h">
+      <Filter>Src\Application\GameObject\Camera\CCTVCamera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -424,6 +430,9 @@
     </ClCompile>
     <ClCompile Include="Src\Application\GameObject\Terrain\Terrain.cpp">
       <Filter>Src\Application\GameObject\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\GameObject\Camera\CCTVCamera\CCVTCamera.cpp">
+      <Filter>Src\Application\GameObject\Camera\CCTVCamera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

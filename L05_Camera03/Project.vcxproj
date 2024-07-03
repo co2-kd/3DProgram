@@ -157,6 +157,7 @@
     <ClInclude Include="..\Library\tinygltf\stb_image_write.h" />
     <ClInclude Include="..\Library\tinygltf\tiny_gltf.h" />
     <ClInclude Include="Src\Application\GameObject\Camera\CameraBase.h" />
+    <ClInclude Include="Src\Application\GameObject\Camera\CCTVCamera\CCVTCamera.h" />
     <ClInclude Include="Src\Application\GameObject\Camera\FPSCamera\FPSCamera.h" />
     <ClInclude Include="Src\Application\GameObject\Camera\TPSCamera\TPSCamera.h" />
     <ClInclude Include="Src\Application\GameObject\Character\Character.h" />
@@ -212,6 +213,7 @@
     <ClCompile Include="..\Library\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Library\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Src\Application\GameObject\Camera\CameraBase.cpp" />
+    <ClCompile Include="Src\Application\GameObject\Camera\CCTVCamera\CCVTCamera.cpp" />
     <ClCompile Include="Src\Application\GameObject\Camera\FPSCamera\FPSCamera.cpp" />
     <ClCompile Include="Src\Application\GameObject\Camera\TPSCamera\TPSCamera.cpp" />
     <ClCompile Include="Src\Application\GameObject\Character\Character.cpp" />

@@ -5,7 +5,7 @@ void CCVTCamera::Init()
 	CameraBase::Init();
 
 	// 注視点
-	m_mLocalPos = Math::Matrix::CreateTranslation(0, 6.f, -10.0f);
+	m_mLocalPos = Math::Matrix::CreateTranslation(0, 6.f, -10.f);
 
 	//一旦行列を確定させる
 	m_mWorld = m_mLocalPos;
